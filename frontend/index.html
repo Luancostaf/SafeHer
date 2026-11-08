@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="phone">
+        <!-- ===================== WELCOME ===================== -->
+        <section class="screen screen-nonav active" id="screen-welcome">
+            <div class="welcome-header">
+                <span class="line1">Bem-Vinda ao</span>
+                <div class="brand font-quicksand">SafeHer</div>
+                <p class="tagline">Entender seu relacionamento pode mudar tudo</p>
+            </div>
+            <img class="welcome-illustration" src="assets/img/welcome-illustration.png" alt="">
+            <div class="welcome-actions">
+                <button class="btn btn-primary" data-nav="register">Começar</button>
+                <button class="btn btn-outline" data-nav="login">Já tenho conta</button>
+            </div>
+        </section>
+
+        <!-- ===================== REGISTER ===================== -->
+        <section class="screen screen-nonav" id="screen-register">
+            <div class="top-bar">
+                <button class="back-text-btn" data-nav="welcome">
+                    <span class="triangle-back">‹</span> Voltar
+                </button>
+            </div>
+            <div class="auth-card">
+                <h2 class="font-quicksand">Crie sua conta</h2>
+                <p class="subtitle">Comece sua jornada de autoconhecimento.</p>
+                <div class="form-alert" id="register-alert"></div>
+                <form id="form-register">
+                    <div class="field">
+                        <label>Nome completo</label>
+                        <input type="text" id="reg-nome" required>
+                    </div>
+                    <div class="field">
+                        <label>Telefone</label>
+                        <input type="tel" id="reg-telefone" required>
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" id="reg-email" required>
+                    </div>
+                    <div class="field">
+                        <label>Senha</label>
+                        <input type="password" id="reg-senha" required minlength="6">
+                    </div>
+                    <div class="field">
+                        <label>Confirmar Senha</label>
+                        <input type="password" id="reg-confirma" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+                <p class="auth-switch">Já possui conta? <button type="button" class="btn-link"
+                        data-nav="login">Entrar</button></p>
+            </div>
+        </section>
+
+        <!-- ===================== LOGIN ===================== -->
+        <section class="screen screen-nonav" id="screen-login">
+            <div class="top-bar">
+                <button class="back-text-btn" data-nav="welcome">
+                    <span class="triangle-back">‹</span> Voltar
+                </button>
+            </div>
+            <div class="auth-card">
+                <h2 class="font-quicksand">Bem-Vinda de Volta</h2>
+                <p class="subtitle">Acesse sua conta para continuar</p>
+                <div class="form-alert" id="login-alert"></div>
+                <form id="form-login">
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="field">
+                        <label>Senha</label>
+                        <input type="password" id="login-senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </form>
+                <p class="auth-switch">Não tenho conta? <button type="button" class="btn-link" data-nav="register">Criar
+                        conta</button></p>
+            </div>
+        </section>
+
+        <!-- ===================== HOME ===================== -->
+        <section class="screen" id="screen-home">
+            <div class="home-top-header">
+                <div class="greeting">
+                    <span class="hi font-quicksand">Olá,</span>
+                    <span class="name" id="home-username">amiga</span>
+                </div>
+                <button type="button" id="btn-hamburger" class="hamburger-btn" aria-label="Menu de Recursos">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <button class="card-start" data-nav="intro">
+                <div class="icons-row">
+                    <img src="assets/img/icon-prancheta.png" alt="">
+                    <img src="assets/img/icon-coracao.png" alt="">
+                </div>
+                <h3>Iniciar avaliação</h3>
+                <p>Uma reflexão guiada e confidencial sobre seu relacionamento.</p>
+            </button>
+
+            <div class="mini-cards">
+                <button class="mini-card" data-nav="history">
+                    <img src="assets/img/icon-historico.png" alt="">
+                    <span class="title">Histórico</span>
+                    <span class="subtitle">Suas avaliações</span>
+                </button>
+                <button class="mini-card" data-nav="about">
+                    <img src="assets/img/icon-sobre.png" alt="">
+                    <span class="title">Sobre</span>
+                    <span class="subtitle">O SafeHer</span>
+                </button>
+            </div>
+
+            <div class="tip-card">
+                <div class="label">DICA DO DIA</div>
+                <p id="home-tip"></p>
+                <button class="more btn-link" data-nav="about">Saiba mais &gt;</button>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item active" data-nav="home"><img src="assets/img/nav-home.png"
+                        alt="">Início</button>
+                <button class="nav-item" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Recursos</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== HISTORY ===================== -->
+        <section class="screen" id="screen-history">
+            <div class="history-header-row">
+                <div>
+                    <h1 class="page-title">Histórico</h1>
+                    <p class="page-subtitle" style="margin-bottom: 0;">Acompanhe suas avaliações ao longo do tempo</p>
+                </div>
+                <button type="button" id="btn-clear-history" class="btn-clear-all" style="display: none;">Limpar
+                    tudo</button>
+            </div>
+
+            <div id="history-empty" class="empty-state">
+                <img src="assets/img/icon-prancheta.png" alt="Ícone de Histórico">
+                <span class="title">Nenhuma avaliação ainda</span>
+                <span class="subtitle">Suas reflexões aparecerão aqui.</span>
+                <button class="btn btn-primary" data-nav="intro">Fazer avaliação</button>
+            </div>
+
+            <div id="history-list" class="feature-content"></div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Recursos</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== ABOUT ===================== -->
+        <section class="screen screen-nonav" id="screen-about">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="home"><img src="assets/img/icon-voltar.png" alt="Voltar"></button>
+            </div>
+            <div class="about-hero">
+                <img src="assets/img/icon-coracao-sobre.png" alt="">
+            </div>
+            <h2 class="about-title">Sobre o SafeHer</h2>
+            <p class="about-desc">O SafeHer é uma ferramenta preventiva que auxilia mulheres na percepção de possíveis
+                comportamentos preocupantes em relacionamentos amorosos.</p>
+
+            <div class="info-box">
+                <img src="assets/img/icon-escudo.png" alt="">
+                <p>As avaliações têm caráter exclusivamente informativo e não substituem atendimento psicológico,
+                    jurídico ou policial.</p>
+            </div>
+            <div class="info-box">
+                <img src="assets/img/icon-cadeado.png" alt="">
+                <p>Suas respostas são armazenadas localmente neste aparelho. Nenhum dado é enviado para servidores
+                    externos neste protótipo.</p>
+            </div>
+
+            <div class="emergency-block">
+                <div class="label">EMERGÊNCIA</div>
+                <a href="tel:180">Ligue 180 - Central de Atendimento à Mulher.</a>
+            </div>
+
+            <div class="version-tag">Versão 1.0.0 - Protótipo</div>
+        </section>
+
+        <!-- ===================== RECURSOS / MENU CENTRAL ===================== -->
+        <section class="screen" id="screen-resources">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="home"><img src="assets/img/icon-voltar.png" alt="Voltar"></button>
+            </div>
+            <h1 class="page-title">Recursos</h1>
+            <p class="page-subtitle">Ferramentas de apoio e segurança pessoal</p>
+
+            <div class="resources-grid">
+                <button class="resource-card" data-nav="contatos">
+                    <span class="resource-icon">🛡️</span>
+                    <div>
+                        <strong>Contatos de Emergência</strong>
+                        <p>Pessoas de confiança para alertas</p>
+                    </div>
+                </button>
+                <button class="resource-card" data-nav="diario">
+                    <span class="resource-icon">📖</span>
+                    <div>
+                        <strong>Diário de Bordo</strong>
+                        <p>Registro seguro de incidentes</p>
+                    </div>
+                </button>
+                <button class="resource-card" data-nav="disfarce">
+                    <span class="resource-icon">🎭</span>
+                    <div>
+                        <strong>Modo Disfarce</strong>
+                        <p>Camuflagem visual da interface</p>
+                    </div>
+                </button>
+                <button class="resource-card" data-nav="mapa">
+                    <span class="resource-icon">📍</span>
+                    <div>
+                        <strong>Mapa de Apoio</strong>
+                        <p>Delegacias e centros próximos</p>
+                    </div>
+                </button>
+                <button class="resource-card" data-nav="cartilha">
+                    <span class="resource-icon">📚</span>
+                    <div>
+                        <strong>Cartilha de Direitos</strong>
+                        <p>Informações e leis</p>
+                    </div>
+                </button>
+                <button class="resource-card" data-nav="chatbot">
+                    <span class="resource-icon">💭</span>
+                    <div>
+                        <strong>Chat de Apoio</strong>
+                        <p>Ouvir e Orientar</p>
+                    </div>
+                </button>
+                <button class="resource-card" data-nav="plano">
+                    <span class="resource-icon">🛡️</span>
+                    <div>
+                        <strong>Plano de Segurança</strong>
+                        <p>Plano de Fuga/Ação</p>
+                    </div>
+                </button>
+                <button class="resource-card" data-nav="relatorio">
+                    <span class="resource-icon">📄</span>
+                    <div>
+                        <strong>Relatórios e Evidências</strong>
+                        <p>Exportar Históricos e Relatos</p>
+                    </div>
+                </button>
+                <button class="resource-card" data-nav="tarefas">
+                    <span class="resource-icon">✅</span>
+                    <div>
+                        <strong>Meu Autocuidado</strong>
+                        <p>Tarefas Diárias</p>
+                    </div>
+                </button>
+                <button class="resource-card" data-nav="agenda">
+                    <span class="resource-icon">📅</span>
+                    <div>
+                        <strong>Minha Agenda</strong>
+                        <p>Agendar e Visualizar</p>
+                    </div>
+                </button>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Recursos</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== 1. CONTATOS DE EMERGÊNCIA ===================== -->
+        <section class="screen" id="screen-contatos">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">🛡️</div>
+                <h1 class="page-title">Contatos de Emergência</h1>
+            </div>
+            <p class="page-subtitle">Cadastre, edite ou exclua pessoas de confiança que receberão os alertas do sistema.
+            </p>
+
+            <div style="margin-top: 8px;">
+                <button type="button" class="btn btn-primary" id="btn-open-contact-modal">+ Adicionar contato</button>
+            </div>
+
+            <div class="section-label" style="margin-top: 18px;">Seus contatos</div>
+            <div id="contacts-list" class="feature-content"></div>
+
+            <!-- MODAL DE CADASTRO DE CONTATO -->
+            <div id="contact-modal" class="modal-overlay"
+                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 1000;">
+                <div class="modal-card"
+                    style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 320px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <h3 style="margin-bottom: 16px; font-size: 18px; color: var(--text-dark);">Novo Contato</h3>
+                    <form id="form-add-contact">
+                        <div class="field" style="margin-bottom: 12px;">
+                            <label style="font-size: 12px; color: var(--text-medium);">Nome</label>
+                            <input type="text" id="modal-contact-nome" required
+                                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px;">
+                        </div>
+                        <div class="field" style="margin-bottom: 12px;">
+                            <label style="font-size: 12px; color: var(--text-medium);">Telefone</label>
+                            <input type="tel" id="modal-contact-telefone" required
+                                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px;">
+                        </div>
+                        <div class="field" style="margin-bottom: 16px;">
+                            <label style="font-size: 12px; color: var(--text-medium);">E-mail (opcional)</label>
+                            <input type="email" id="modal-contact-email"
+                                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px;">
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button type="button" class="btn btn-outline" id="btn-close-contact-modal"
+                                style="flex: 1;">Cancelar</button>
+                            <button type="submit" class="btn btn-primary" style="flex: 1;">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Início</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== 2. DIÁRIO DE BORDO ===================== -->
+        <section class="screen" id="screen-diario">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">📖</div>
+                <h1 class="page-title">Diário de Bordo</h1>
+            </div>
+            <p class="page-subtitle">Registre relatos e acontecimentos importantes em um espaço seguro e privado.</p>
+
+            <div style="margin-top: 8px;">
+                <button type="button" class="btn btn-primary" id="btn-open-diario-modal">+ Novo registro</button>
+            </div>
+
+            <div class="section-label" style="margin-top: 18px;">Seus registros</div>
+            <div id="diario-list" class="feature-content"></div>
+
+            <!-- MODAL DE CADASTRO DO DIÁRIO DE BORDO -->
+            <div id="diario-modal" class="modal-overlay"
+                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 1000;">
+                <div class="modal-card"
+                    style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 360px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <h3 style="margin-bottom: 16px; font-size: 18px; color: var(--text-dark);">Novo Relato no Diário
+                    </h3>
+                    <form id="form-add-diario">
+                        <div class="field" style="margin-bottom: 12px;">
+                            <label
+                                style="font-size: 12px; color: var(--text-medium); display: block; margin-bottom: 4px;">Título</label>
+                            <input type="text" id="modal-diario-titulo" required placeholder="Ex: Discussão no trabalho"
+                                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+                        </div>
+                        <div class="field" style="margin-bottom: 12px;">
+                            <label
+                                style="font-size: 12px; color: var(--text-medium); display: block; margin-bottom: 4px;">Data
+                                do Ocorrido</label>
+                            <input type="date" id="modal-diario-data" required
+                                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+                        </div>
+                        <div class="field" style="margin-bottom: 16px;">
+                            <label
+                                style="font-size: 12px; color: var(--text-medium); display: block; margin-bottom: 4px;">Descrição
+                                / Relato</label>
+                            <textarea id="modal-diario-descricao" rows="4" required
+                                placeholder="Descreva o que aconteceu..."
+                                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; resize: vertical;"></textarea>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button type="button" class="btn btn-outline" id="btn-close-diario-modal"
+                                style="flex: 1;">Cancelar</button>
+                            <button type="submit" class="btn btn-primary" style="flex: 1;">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Início</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== 3. MODO DISFARCE / CAMUFLAGEM ===================== -->
+        <section class="screen" id="screen-disfarce">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">🎭</div>
+                <h1 class="page-title">Modo Disfarce</h1>
+            </div>
+            <p class="page-subtitle">Altere a aparência do app para um visual neutro e discreto, garantindo sua
+                privacidade em momentos de risco.</p>
+
+            <div class="disguise-options-container" style="margin-top: 20px;">
+                <label class="disguise-card"
+                    style="display: flex; align-items: center; justify-content: space-between; background: white; padding: 14px; border-radius: 12px; margin-bottom: 10px; border: 2px solid #eee; cursor: pointer;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 24px;">🛡️</span>
+                        <div>
+                            <strong style="display: block; font-size: 14px; color: #333;">Padrão (SafeHer)</strong>
+                            <span style="font-size: 12px; color: #666;">Visual principal do app</span>
+                        </div>
+                    </div>
+                    <input type="radio" name="disguise-theme" value="padrao" checked>
+                </label>
+
+                <label class="disguise-card"
+                    style="display: flex; align-items: center; justify-content: space-between; background: white; padding: 14px; border-radius: 12px; margin-bottom: 10px; border: 2px solid #eee; cursor: pointer;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 24px;">🔢</span>
+                        <div>
+                            <strong style="display: block; font-size: 14px; color: #333;">Calculadora</strong>
+                            <span style="font-size: 12px; color: #666;">Simples e discreto</span>
+                        </div>
+                    </div>
+                    <input type="radio" name="disguise-theme" value="calculadora">
+                </label>
+
+                <label class="disguise-card"
+                    style="display: flex; align-items: center; justify-content: space-between; background: white; padding: 14px; border-radius: 12px; margin-bottom: 10px; border: 2px solid #eee; cursor: pointer;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 24px;">📝</span>
+                        <div>
+                            <strong style="display: block; font-size: 14px; color: #333;">Bloco de Notas</strong>
+                            <span style="font-size: 12px; color: #666;">Parecido com um app de notas</span>
+                        </div>
+                    </div>
+                    <input type="radio" name="disguise-theme" value="notas">
+                </label>
+
+                <label class="disguise-card"
+                    style="display: flex; align-items: center; justify-content: space-between; background: white; padding: 14px; border-radius: 12px; margin-bottom: 16px; border: 2px solid #eee; cursor: pointer;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 24px;">📰</span>
+                        <div>
+                            <strong style="display: block; font-size: 14px; color: #333;">Notícias</strong>
+                            <span style="font-size: 12px; color: #666;">Visual de app de notícias</span>
+                        </div>
+                    </div>
+                    <input type="radio" name="disguise-theme" value="noticias">
+                </label>
+            </div>
+
+            <button type="button" id="btn-ativar-disfarce" class="btn btn-primary" style="width: 100%;">Ativar modo
+                disfarce</button>
+            <p style="text-align: center; font-size: 11px; color: #888; margin-top: 8px;">O app será ajustado
+                instantaneamente com o novo tema.</p>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Recursos</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== TELA DISFARÇADA: CALCULADORA ===================== -->
+        <section class="screen" id="screen-disguise-calculadora">
+            <div class="top-bar">
+                <button type="button" id="btn-sair-disfarce" class="back-text-btn" style="color: #666;">
+                    <span class="triangle-back" style="border-color: #666;">‹</span> Sair
+                </button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge" style="background: #e0e0e0;">🔢</div>
+                <h1 class="page-title" style="color: #333;">Calculadora</h1>
+            </div>
+            <p class="page-subtitle" style="color: #666;">Ferramenta de cálculo simples.</p>
+
+            <div id="calc-display" style="background: #222; color: #fff; padding: 20px; font-size: 32px; text-align: right; border-radius: 12px; margin-bottom: 20px; font-family: monospace;">
+                0
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                <button type="button" class="btn calc-action" data-action="clear" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">C</button>
+                <button type="button" class="btn calc-action" data-action="sign" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">±</button>
+                <button type="button" class="btn calc-action" data-action="percent" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">%</button>
+                <button type="button" class="btn calc-op" data-op="divide" style="padding: 18px; font-size: 18px; background: #757575; color: #fff; border-radius: var(--radius-pill);">÷</button>
+                
+                <button type="button" class="btn calc-num" data-num="7" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">7</button>
+                <button type="button" class="btn calc-num" data-num="8" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">8</button>
+                <button type="button" class="btn calc-num" data-num="9" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">9</button>
+                <button type="button" class="btn calc-op" data-op="multiply" style="padding: 18px; font-size: 18px; background: #757575; color: #fff; border-radius: var(--radius-pill);">×</button>
+                
+                <button type="button" class="btn calc-num" data-num="4" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">4</button>
+                <button type="button" class="btn calc-num" data-num="5" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">5</button>
+                <button type="button" class="btn calc-num" data-num="6" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">6</button>
+                <button type="button" class="btn calc-op" data-op="subtract" style="padding: 18px; font-size: 18px; background: #757575; color: #fff; border-radius: var(--radius-pill);">-</button>
+                
+                <button type="button" class="btn calc-num" data-num="1" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">1</button>
+                <button type="button" class="btn calc-num" data-num="2" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">2</button>
+                <button type="button" class="btn calc-num" data-num="3" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">3</button>
+                <button type="button" class="btn calc-op" data-op="add" style="padding: 18px; font-size: 18px; background: #757575; color: #fff; border-radius: var(--radius-pill);">+</button>
+                
+                <button type="button" class="btn calc-num" data-num="0" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill); grid-column: span 2;">0</button>
+                <button type="button" class="btn calc-action" data-action="decimal" style="padding: 18px; font-size: 18px; background: #fff; border: 2px solid #ccc; color: #333; border-radius: var(--radius-pill);">.</button>
+                <button type="button" class="btn calc-action" data-action="equals" style="padding: 18px; font-size: 18px; background: #757575; color: #fff; border-radius: var(--radius-pill);">=</button>
+            </div>
+
+            <!-- MODAL DE CONFIRMAÇÃO DE SENHA PARA SAIR DO DISFARCE -->
+            <div id="sair-disfarce-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000;">
+                <div class="modal-content" style="background: white; padding: 20px; border-radius: 12px; width: 90%; max-width: 340px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <h3 style="margin-top: 0; color: #333; font-size: 17px;">Sair do Modo Disfarce</h3>
+                    <p style="font-size: 13px; color: #666; margin-bottom: 14px;">Digite sua senha de acesso do SafeHer para continuar:</p>
+                    <form id="form-sair-disfarce">
+                        <div class="field" style="margin-bottom: 15px;">
+                            <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 4px; color: #333;">Senha</label>
+                            <input type="password" id="modal-disfarce-senha" required placeholder="Sua senha" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button type="button" id="btn-close-disfarce-modal" class="btn" style="flex: 1; padding: 10px; border: 1px solid #ccc; background: #f5f5f5; color: #333; border-radius: 6px; cursor: pointer;">Cancelar</button>
+                            <button type="submit" class="btn" style="flex: 1; padding: 10px; border: none; background: #e91e63; color: white; border-radius: 6px; cursor: pointer;">Confirmar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 4. MAPA DE APOIO E DELEGACIAS ===================== -->
+        <section class="screen" id="screen-mapa">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">📍</div>
+                <h1 class="page-title">Mapa de Apoio</h1>
+            </div>
+            <p class="page-subtitle">Encontre pontos de apoio próximos a você, como Delegacias, ONGs e Hospitais.</p>
+
+            <!-- Barra de Pesquisa -->
+            <div style="margin: 12px 0;">
+                <input type="text" id="map-search-input" placeholder="Buscar por endereço ou local..."
+                    style="width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 14px;">
+            </div>
+
+            <!-- Filtros por Categoria -->
+            <div class="filter-pills"
+                style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 12px;">
+                <button type="button" class="btn btn-primary map-filter-btn active" data-categoria="Todos"
+                    style="padding: 6px 14px; font-size: 13px; border-radius: 20px; white-space: nowrap;">Todos</button>
+                <button type="button" class="btn btn-outline map-filter-btn" data-categoria="Delegacia"
+                    style="padding: 6px 14px; font-size: 13px; border-radius: 20px; white-space: nowrap;">Delegacias</button>
+                <button type="button" class="btn btn-outline map-filter-btn" data-categoria="ONG"
+                    style="padding: 6px 14px; font-size: 13px; border-radius: 20px; white-space: nowrap;">ONGs</button>
+                <button type="button" class="btn btn-outline map-filter-btn" data-categoria="Hospital"
+                    style="padding: 6px 14px; font-size: 13px; border-radius: 20px; white-space: nowrap;">Hospitais</button>
+            </div>
+
+            <!-- MAPA REAL DO GOOGLE MAPS (IFRAME) -->
+            <div class="map-container"
+                style="width: 100%; height: 220px; border-radius: 12px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                <iframe id="google-maps-iframe" width="100%" height="100%" style="border:0;" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.941097723793!2d-43.9387!3d-19.9191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDU1JzA4LjgiUyA0M8KwNTYnMTkuMyJX!5e0!3m2!1spt-BR!2sbr!4v1650000000000!5m2!1spt-BR!2sbr">
+                </iframe>
+            </div>
+
+            <div class="section-label" style="font-weight: bold; margin-bottom: 8px; color: var(--text-dark);">Locais
+                Próximos</div>
+
+            <!-- Lista dinâmica vinda do Banco de Dados MySQL -->
+            <div id="mapa-list" class="feature-content"></div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Início</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== 5. CARTILHA DE DIREITOS ===================== -->
+        <section class="screen" id="screen-cartilha">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">📚</div>
+                <h1 class="page-title">Cartilha de Direitos</h1>
+            </div>
+            <p class="page-subtitle">Acesse conteúdos, tire dúvidas e conheça seus direitos, como a Lei Maria da Penha,
+                e os tipos de violência.</p>
+
+            <!-- Filtros por Categoria (Compatíveis com o Banco) -->
+            <div class="filter-pills"
+                style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 16px;">
+                <button type="button" class="btn btn-primary cartilha-filter-btn active" data-categoria="Todos"
+                    style="padding: 6px 14px; font-size: 13px; border-radius: 20px; white-space: nowrap;">Artigos</button>
+                <button type="button" class="btn btn-outline cartilha-filter-btn" data-categoria="Dúvidas Frequentes"
+                    style="padding: 6px 14px; font-size: 13px; border-radius: 20px; white-space: nowrap;">Dúvidas
+                    Frequentes</button>
+                <button type="button" class="btn btn-outline cartilha-filter-btn" data-categoria="Leis"
+                    style="padding: 6px 14px; font-size: 13px; border-radius: 20px; white-space: nowrap;">Leis</button>
+            </div>
+
+            <!-- Lista Dinâmica da Cartilha -->
+            <div id="cartilha-list" class="feature-content"></div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Início</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== 6. CHATBOT DE SUPORTE GUIADO ===================== -->
+        <section class="screen" id="screen-chatbot">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png" alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">💭</div>
+                <h1 class="page-title">Chat de Apoio</h1>
+            </div>
+            <p class="page-subtitle" style="margin-bottom: 16px;">Um espaço seguro para orientação e acolhimento imediato.</p>
+
+            <!-- Container das Mensagens do Chat -->
+            <div class="chat-container" id="chat-messages-container" style="display: flex; flex-direction: column; gap: 12px; max-height: 380px; overflow-y: auto; padding-right: 4px; margin-bottom: 12px;">
+                <div class="chat-bubble bot">
+                    Olá! Estou aqui para te ouvir e te orientar com total sigilo. Como você está se sentindo hoje ou do que precisa neste momento?
+                </div>
+            </div>
+
+            <!-- Botões de Opções Rápidas -->
+            <div class="chat-options-stack" id="chat-options-stack" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+                <button type="button" class="chat-option-btn" data-action="seguranca">Ver plano de segurança</button>
+                <button type="button" class="chat-option-btn" data-action="apoio">Ver pontos de apoio próximos</button>
+                <button type="button" class="chat-option-btn" data-action="emergencia">O que fazer em caso de risco?</button>
+            </div>
+
+            <!-- Barra de Input para Digitar -->
+            <div class="chat-input-bar">
+                <input type="text" id="chat-user-input" placeholder="Digite sua mensagem ou dúvida...">
+                <button type="button" id="btn-send-chat" class="btn-send">🚀</button>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png" alt="">Recursos</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== 7. PLANO DE SEGURANÇA PERSONALIZADO ===================== -->
+        <section class="screen" id="screen-plano">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">🛡️</div>
+                <h1 class="page-title">Plano de Segurança</h1>
+            </div>
+            <p class="page-subtitle">Um assistente passo a passo para te ajudar a elaborar um plano de fuga/ação
+                emergencial.</p>
+
+            <div class="stepper-bar">
+                <div class="step active"><span class="step-num">1</span><span class="step-lbl">Onde ir</span></div>
+                <div class="step-line"></div>
+                <div class="step"><span class="step-num">2</span><span class="step-lbl">Documentos</span></div>
+                <div class="step-line"></div>
+                <div class="step"><span class="step-num">3</span><span class="step-lbl">Contatos</span></div>
+                <div class="step-line"></div>
+                <div class="step"><span class="step-num">4</span><span class="step-lbl">Finalizar</span></div>
+            </div>
+
+            <div class="section-title-bold">1. Onde ir</div>
+            <p class="section-desc">Escolha um local seguro para ir, caso precise sair rapidamente.</p>
+
+            <div class="plan-options">
+                <label class="plan-card">
+                    <div class="plan-info">
+                        <span class="plan-icon">🏠</span>
+                        <strong>Casa de familiar/amigo</strong>
+                    </div>
+                    <input type="radio" name="plan-location" checked>
+                </label>
+
+                <label class="plan-card">
+                    <div class="plan-info">
+                        <span class="plan-icon">🛡️</span>
+                        <strong>Delegacia da Mulher</strong>
+                    </div>
+                    <input type="radio" name="plan-location">
+                </label>
+
+                <label class="plan-card">
+                    <div class="plan-info">
+                        <span class="plan-icon">🏢</span>
+                        <strong>Centro de Referência</strong>
+                    </div>
+                    <input type="radio" name="plan-location">
+                </label>
+
+                <label class="plan-card">
+                    <div class="plan-info">
+                        <span class="plan-icon">📍</span>
+                        <strong>Outro local</strong>
+                    </div>
+                    <input type="radio" name="plan-location">
+                </label>
+            </div>
+
+            <button type="button" class="btn btn-primary" style="margin-top:20px;">Próximo</button>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Recursos</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== 8. RELATÓRIOS E EVIDÊNCIAS EM PDF ===================== -->
+        <section class="screen" id="screen-relatorio">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">📄</div>
+                <h1 class="page-title">Relatórios e Evidências</h1>
+            </div>
+            <p class="page-subtitle">Exporte seu histórico de avaliações, relatos do diário e datas em um relatório PDF
+                protegido por senha para uso jurídico ou policial.</p>
+
+            <div class="pdf-box">
+                <div class="pdf-box-header">
+                    <span class="pdf-icon">📄</span>
+                    <div>
+                        <strong>Gerar relatório</strong>
+                        <p>Inclui avaliações, relatos e datas importantes</p>
+                    </div>
+                    <span class="chevron">&gt;</span>
+                </div>
+
+                <div class="field" style="margin-top:14px; margin-bottom: 12px;">
+                    <label>Definir senha do PDF</label>
+                    <div class="input-password-wrap" style="position: relative; display: flex; align-items: center;">
+                        <!-- Sem limite de caracteres e com ID próprio -->
+                        <input type="password" id="input-senha-pdf" value="12345678"
+                            style="width: 100%; padding: 10px; padding-right: 35px; border: 1px solid #ccc; border-radius: 8px;">
+                        <!-- Ícone do olho com ID para interatividade -->
+                        <span id="toggle-senha-pdf"
+                            style="position: absolute; right: 10px; cursor: pointer; font-size: 16px;">👁️</span>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-gerar-pdf-acao" class="btn btn-primary">Gerar PDF</button>
+            </div>
+
+            <div class="section-label" style="margin-top:20px;">Histórios disponíveis</div>
+            <div id="history-pdf-list-dinamica" class="history-pdf-list">
+                <!-- Conteúdo injetado via JS -->
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Recursos</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== 9. TAREFAS / CHECKLIST DE AUTOCUIDADO ===================== -->
+        <section class="screen" id="screen-tarefas">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">✅</div>
+                <h1 class="page-title">Meu Autocuidado</h1>
+            </div>
+            <p class="page-subtitle">Pequenas tarefas diárias fazem uma grande diferença. Cuide de você!</p>
+
+            <!-- Botão para abrir o modal -->
+            <button type="button" class="btn btn-primary" id="btn-add-task">+ Nova tarefa</button>
+
+            <div class="filter-pills-row" style="margin-top:16px;">
+                <button class="pill-btn active">Hoje</button>
+                <button class="pill-btn">Esta semana</button>
+                <button class="pill-btn">Todas</button>
+            </div>
+
+            <!-- Container onde as tarefas do MySQL serão injetadas -->
+            <div class="tasks-list" id="tasks-list-container">
+                <!-- O conteúdo será preenchido dinamicamente via JS -->
+            </div>
+
+            <!-- ===================== MODAL DE TAREFA ===================== -->
+            <div id="tarefa-modal" class="modal-overlay"
+                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000;">
+                <div class="modal-content"
+                    style="background: white; padding: 20px; border-radius: 12px; width: 90%; max-width: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <h3 style="margin-top: 0; color: #333; font-size: 18px;">Nova Tarefa de Autocuidado</h3>
+                    <form id="form-add-tarefa">
+                        <div class="field" style="margin-bottom: 12px;">
+                            <label
+                                style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;">Título
+                                da Tarefa</label>
+                            <input type="text" id="modal-tarefa-titulo" placeholder="Ex: Beber água" required
+                                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+                        </div>
+                        <div class="field" style="margin-bottom: 15px;">
+                            <label
+                                style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;">Detalhe
+                                ou Tempo Estimado</label>
+                            <input type="text" id="modal-tarefa-detalhe" placeholder="Ex: 2/8 copos, 20 min"
+                                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button type="button" id="btn-close-tarefa-modal" class="btn btn-outline"
+                                style="flex: 1; padding: 8px; border: 1px solid #ccc; background: #f5f5f5; border-radius: 6px; cursor: pointer;">Cancelar</button>
+                            <button type="submit" class="btn btn-primary"
+                                style="flex: 1; padding: 8px; border: none; background: #e91e63; color: white; border-radius: 6px; cursor: pointer;">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Recursos</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== 10. AGENDA DE LEMBRETES E CONSULTAS ===================== -->
+        <section class="screen" id="screen-agenda">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="resources"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="feature-header">
+                <div class="feature-icon-badge">📅</div>
+                <h1 class="page-title">Minha Agenda</h1>
+            </div>
+            <p class="page-subtitle">Acompanhe suas consultas, compromissos e datas importantes em um só lugar.</p>
+
+            <button type="button" id="btn-open-agenda-modal" class="btn btn-primary" style="margin-bottom: 20px;">+ Novo
+                Compromisso</button>
+
+            <div class="section-label">Compromissos agendados</div>
+            <div id="events-list-container" class="events-list"></div>
+
+            <!-- Modal de Cadastro de Agenda -->
+            <div id="agenda-modal" class="modal-overlay"
+                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000;">
+                <div class="modal-content"
+                    style="background: white; padding: 20px; border-radius: 12px; width: 90%; max-width: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <h3 style="margin-top: 0; color: #333; font-size: 18px;">Novo Compromisso</h3>
+                    <form id="form-add-agenda">
+                        <div class="field" style="margin-bottom: 12px;">
+                            <label
+                                style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;">Título</label>
+                            <input type="text" id="modal-agenda-titulo" placeholder="Ex: Consulta médica" required
+                                style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; box-sizing: border-box;">
+                        </div>
+                        <div class="field" style="margin-bottom: 12px;">
+                            <label
+                                style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;">Horário
+                                e Local</label>
+                            <input type="text" id="modal-agenda-detalhe" placeholder="Ex: 14:00 - UBS Centro" required
+                                style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; box-sizing: border-box;">
+                        </div>
+                        <div style="display: flex; gap: 12px; margin-bottom: 15px;">
+                            <div class="field" style="flex: 1; min-width: 0;">
+                                <label
+                                    style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;">Dia</label>
+                                <input type="number" id="modal-agenda-dia" min="1" max="31" placeholder="15" required
+                                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+                            </div>
+                            <div class="field" style="flex: 1; min-width: 0;">
+                                <label
+                                    style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;">Mês
+                                    (1 a 12)</label>
+                                <input type="number" id="modal-agenda-mes" min="1" max="12" placeholder="5" required
+                                    style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button type="button" id="btn-close-agenda-modal" class="btn btn-outline"
+                                style="flex: 1; padding: 8px; border: 1px solid #ccc; background: #f5f5f5; border-radius: 6px; cursor: pointer;">Cancelar</button>
+                            <button type="submit" class="btn btn-primary"
+                                style="flex: 1; padding: 8px; border: none; background: #e91e63; color: white; border-radius: 6px; cursor: pointer;">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item active" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Recursos</button>
+                <button class="nav-item" data-nav="profile"><img src="assets/img/nav-perfil.png" alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== PROFILE ===================== -->
+        <section class="screen" id="screen-profile">
+            <div class="profile-header">
+                <label class="avatar-wrap" for="profile-photo-input">
+                    <img src="assets/img/foto-perfil.png" alt="" id="profile-photo">
+                    <span class="avatar-edit"><img src="assets/img/icon-person-gear.png" alt=""></span>
+                </label>
+                <input type="file" id="profile-photo-input" accept="image/*" hidden>
+                <div class="name" id="profile-username">Usuária</div>
+                <div class="email" id="profile-email"></div>
+            </div>
+
+            <button class="profile-row" id="btn-edit-profile">
+                <div class="circle"><img src="assets/img/icon-person-gear.png" alt=""></div>
+                <span class="label">Editar perfil</span>
+            </button>
+            <button class="profile-row" id="btn-change-password">
+                <div class="circle"><img src="assets/img/icon-key.png" alt=""></div>
+                <span class="label">Alterar senha</span>
+            </button>
+            <button class="profile-row danger" id="btn-logout">
+                <div class="circle"><img src="assets/img/icon-exit.png" alt=""></div>
+                <span class="label">Sair</span>
+            </button>
+
+            <nav class="bottom-nav">
+                <button class="nav-item" data-nav="home"><img src="assets/img/nav-home.png" alt="">Início</button>
+                <button class="nav-item" data-nav="resources"><img src="assets/img/icon-prancheta.png"
+                        alt="">Recursos</button>
+                <button class="nav-item active" data-nav="profile"><img src="assets/img/nav-perfil.png"
+                        alt="">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- ===================== INTRO ===================== -->
+        <section class="screen screen-nonav" id="screen-intro">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="home"><img src="assets/img/icon-voltar.png" alt="Voltar"></button>
+            </div>
+            <h2 class="intro-title">Antes de começarmos</h2>
+            <p class="intro-desc">Esta avaliação é uma ferramenta de reflexão. Não gera diagnóstico.</p>
+
+            <div class="feature-card">
+                <div class="circle"><img src="assets/img/icon-escudo.png" alt=""></div>
+                <div>
+                    <div class="title">Caráter preventivo</div>
+                    <div class="desc">Ajuda a perceber sinais que merecem sua atenção.</div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="circle"><img src="assets/img/icon-coracao-mao.png" alt=""></div>
+                <div>
+                    <div class="title">Não é um diagnóstico</div>
+                    <div class="desc">Não substitui apoio psicológico, jurídico ou policial.</div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="circle"><img src="assets/img/icon-cadeado.png" alt=""></div>
+                <div>
+                    <div class="title">Confidencial</div>
+                    <div class="desc">Suas respostas ficam salvas apenas neste aparelho.</div>
+                </div>
+            </div>
+
+            <div class="intro-cta">
+                <button class="btn btn-primary" id="btn-start-assessment">Começar Avaliação</button>
+            </div>
+        </section>
+
+        <!-- ===================== QUESTIONS ===================== -->
+        <section class="screen screen-nonav" id="screen-questions">
+            <div class="top-bar">
+                <button class="back-btn" id="btn-question-back"><img src="assets/img/icon-voltar.png"
+                        alt="Voltar"></button>
+            </div>
+            <div class="q-progress-row">
+                <span id="q-counter">Pergunta 1 de 15</span>
+                <span id="q-percent">0%</span>
+            </div>
+            <div class="q-progress-track">
+                <div class="q-progress-bar" id="q-progress-bar"></div>
+            </div>
+
+            <div class="q-badge">REFLITA COM CALMA</div>
+            <div class="q-text" id="q-text"></div>
+
+            <div id="q-options"></div>
+
+            <div class="spacer"></div>
+            <button class="btn btn-primary q-next" id="btn-question-next" disabled>Próxima</button>
+        </section>
+
+        <!-- ===================== ANALYZING ===================== -->
+        <section class="screen screen-nonav" id="screen-analyzing">
+            <div class="analyzing-visual">
+                <img src="assets/img/img-analisando.png" alt="">
+                <div class="spinner"></div>
+            </div>
+            <h2>Analisando suas respostas...</h2>
+            <p>Estamos processando com cuidado e discrição</p>
+        </section>
+
+        <!-- ===================== RESULT ===================== -->
+        <section class="screen screen-nonav" id="screen-result">
+            <div class="result-label">RESULTADO</div>
+            <div class="result-title">Índice comportamental</div>
+
+            <div class="gauge-wrap">
+                <div class="gauge" id="result-gauge" style="--pct:0">
+                    <div class="pct" id="result-percent">0%<span id="result-tier"></span></div>
+                </div>
+            </div>
+
+            <p class="result-msg" id="result-message"></p>
+
+            <div class="disclaimer-box">
+                <img src="assets/img/icon-alerta.png" alt="">
+                <p>Esta avaliação possui caráter exclusivamente informativo e preventivo, não representando diagnóstico.
+                </p>
+            </div>
+
+            <button class="btn btn-primary" data-nav="recommendations" style="margin-bottom:14px;">Ver
+                recomendações</button>
+
+            <div class="result-actions">
+                <button class="btn-secondary" id="btn-save-result"><img src="assets/img/icon-salvar.png"
+                        alt="">Salvar</button>
+                <button class="btn-secondary alt" data-nav="home"><img src="assets/img/nav-home.png"
+                        alt="">Início</button>
+            </div>
+        </section>
+
+        <!-- ===================== RECOMMENDATIONS ===================== -->
+        <section class="screen screen-nonav" id="screen-recommendations">
+            <div class="top-bar">
+                <button class="back-btn" data-nav="result"><img src="assets/img/icon-voltar.png" alt="Voltar"></button>
+            </div>
+            <h1 class="page-title" style="font-size:24px;">Recomendações</h1>
+            <p class="page-subtitle" style="font-size:12px;">Passos gentis que podem te ajudar a refletir e cuidar de
+                si.</p>
+
+            <div id="reco-list"></div>
+
+            <button class="btn btn-primary reco-cta" data-nav="home">Finalizar</button>
+        </section>
+
+        <!-- Overlay e Drawer do Menu Hambúrguer -->
+        <div id="menu-overlay" class="menu-overlay"></div>
+        <aside id="side-menu" class="side-menu">
+            <div class="side-menu-header">
+                <h3>Recursos & Ferramentas</h3>
+                <button type="button" id="btn-close-menu" class="btn-close-menu">&times;</button>
+            </div>
+            <ul class="side-menu-list">
+                <li><button type="button" data-nav="contatos">Contatos de Emergência</button></li>
+                <li><button type="button" data-nav="diario">Diário de Bordo</button></li>
+                <li><button type="button" data-nav="disfarce">Modo Disfarce</button></li>
+                <li><button type="button" data-nav="mapa">Mapa de Apoio</button></li>
+                <li><button type="button" data-nav="cartilha">Cartilha de Direitos</button></li>
+                <li><button type="button" data-nav="chatbot">Chatbot de Apoio</button></li>
+                <li><button type="button" data-nav="plano">Plano de Segurança</button></li>
+                <li><button type="button" data-nav="relatorio">Relatórios e PDF</button></li>
+                <li><button type="button" data-nav="tarefas">Checklist Autocuidado</button></li>
+                <li><button type="button" data-nav="agenda">Minha Agenda</button></li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
