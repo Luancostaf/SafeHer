@@ -17,7 +17,7 @@ class ProcessarChatService:
         except Exception as db_err:
             print("Erro ao salvar mensagem do usuário no banco:", str(db_err))
 
-        # 2. Resposta inteligente simulada (Opção 2) baseada nas opções do SafeHer
+        # 2. Resposta inteligente simulada baseada nas opções do SafeHer
         msg_lower = mensagem_usuario.lower()
         
         if "plano de segurança" in msg_lower:

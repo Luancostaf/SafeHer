@@ -10,9 +10,7 @@
 ---
 
 # 📖 Sobre o Projeto
-O **SafeHer** é uma aplicação web desenvolvida com o objetivo de auxiliar mulheres na identificação preventiva de possíveis comportamentos preocupantes em relacionamentos amorosos.
-
-O sistema realiza uma avaliação comportamental por meio de um questionário adaptativo, integrando a interface ao servidor Flask para salvar e processar o histórico diretamente em um banco de dados MySQL via **Stored Procedures**.
+O **SafeHer** é uma aplicação voltada para a segurança e o suporte, cujo backend foi desenvolvido em **Python** utilizando o framework **Flask**. O sistema conta com uma estrutura modularizada para gerenciamento de usuárias, diário, planos de segurança, chats, rotas de apoio, entre outras funcionalidades de apoio.
 
 *O aplicativo possui caráter exclusivamente informativo e **não substitui** apoio psicológico, jurídico ou policial.*
 
@@ -37,27 +35,12 @@ O sistema realiza uma avaliação comportamental por meio de um questionário ad
 
 ---
 
-# ✨ Funcionalidades do Sistema
-- Cadastro e autenticação de usuárias via API;
-- Upload e gerenciamento de foto de perfil local/remoto;
-- Questionário de avaliação comportamental integrado ao Banco de Dados;
-- Cálculo e persistência do índice comportamental e classificação do risco;
-- Exibição e exclusão de histórico de avaliações consultando **Stored Procedures**;
-- Cadastro e gestão de contatos de emergência e registros no Diário de Bordo;
-- Cartilha de Direitos com expansão em sanfona/accordion;
-- Checklist diário interativo de Autocuidado e Minha Agenda de lembretes/consultas;
-- Recomendações informativas e dicas dinâmicas vindas do servidor;
-- Servidor único integrado para Front-end e Back-end (sem dependência de Live Server).
-
----
-
 # 🛠️ Destaques Técnicos e Arquitetura
 O Back-end foi implementado em arquitetura em camadas (MVC / Layered Architecture), promovendo o desacoplamento e a manutenibilidade do código.
 
 * **Controllers (Blueprints):** Responsáveis pelo gerenciamento das rotas, validações das requisições HTTP e tratamento do recebimento de dados multipart/form-data ou JSON.
 * **Services:** Responsáveis pela concentração das regras de negócio da aplicação.
 * **Repositories:** Responsáveis pela abstração das consultas e comandos de persistência no banco de dados através do ORM / PyMySQL.
-* **Integração Monolítica Simplificada (Flask Views):** O Flask gerencia tanto as rotas da API RESTful quanto a renderização da interface (`templates/index.html`) e o provimento de ativos estáticos (`static/assets/`), eliminando problemas de CORS e dispensando servidores de desenvolvimento adicionais no Front-end.
 
 ---
 
@@ -129,34 +112,29 @@ SafeHer/
 │
 ├── backend/
 │   ├── controllers/
-│   ├── database/
-│   │   ├── create_database.sql
-│   │   └── stored_procedures.sql
 │   ├── models/
 │   ├── repositories/
 │   ├── services/
-│   │
-│   ├── static/               # Arquivos estáticos servidos pelo Flask
-│   │   └── assets/
-│   │       ├── css/
-│   │       ├── img/
-│   │       └── js/
-│   │           ├── api.js    # Integração com a API Flask
-│   │           ├── app.js    # Lógica do Quiz e interface
-│   │           ├── data.js
-│   │           └── storage.js
-│   │
-│   ├── templates/            # Views / HTML da aplicação
-│   │   └── index.html
-│   │
+|   ├── venv/
 │   ├── app.py                # Ponto de entrada da aplicação
 │   ├── config.py             # Configurações do Banco de Dados
 │   ├── extensions.py
 │   ├── routes.py             # Mapeamento de rotas
-│   └── requirements.txt
 │
 ├── docs/
 │   └── diagrama_classes.md   # Diagrama de classes do domínio
+|
+├── frontend/
+│   ├── assets/
+|   |     ├── css/
+|   |     ├── img/
+|   |     ├── js/
+|   |          ├── api.js
+|   |          ├── app.js
+|   |          ├── data.js
+|   |          ├── storage.js
+|   |
+|   ├── index.html
 ├── .gitignore
 └── README.md
 ```
@@ -182,14 +160,7 @@ SafeHer/
    cd SafeHer
    ```
 
-3. **Instale as dependências**
-   ```bash
-   pip install -r backend/requirements.txt
-   ```
-
-4. **Configure o banco de dados MySQL**
-   * Importe o arquivo `backend/database/create_database.sql` no seu gerenciador MySQL.
-   * Execute o script `backend/database/stored_procedures.sql`.
+3. **Configure o banco de dados MySQL**
    * Ajuste as credenciais de acesso no arquivo `backend/config.py`:
      ```python
      SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://seu_usuario:sua_senha@localhost/nome_do_banco'
@@ -200,3 +171,6 @@ SafeHer/
    python backend/app.py
    ```
    * Acesse a aplicação pelo navegador no endereço indicado no terminal (geralmente `http://127.0.0.1:5000`).
+
+
+

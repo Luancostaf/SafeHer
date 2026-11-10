@@ -67,5 +67,5 @@ def registrar_rotas(app):
     app.add_url_rule('/tarefas/<int:id_tarefa>', endpoint='deletar_tarefa', view_func=TarefaController.deletar, methods=['DELETE'])
 
     # === CHAT DE APOIO ===
-    app.add_url_rule('/api/chat', view_func=ChatController.enviar_mensagem, methods=['POST'])
-    app.add_url_rule('/api/chat/<int:id_usuario>', view_func=ChatController.obter_historico, methods=['GET'])
+    app.add_url_rule('/chat', view_func=ChatController.enviar_mensagem, methods=['POST'])
+    app.add_url_rule('/chat/<int:id_usuario>', view_func=ChatController.obter_historico, methods=['GET'])
