@@ -136,6 +136,7 @@ SafeHer/
 |   |
 |   ├── index.html
 ├── .gitignore
+├── requirements.txt
 └── README.md
 ```
 
